@@ -1,4 +1,4 @@
-Boilerplate containing React, ES6, Less, and Gulp.
+Thinkerous, with Flux.
 
 To run:
 
