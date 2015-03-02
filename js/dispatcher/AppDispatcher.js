@@ -4,8 +4,13 @@
  * A singleton that operates as the central hub for application updates.
  */
 
-import { Dispatcher } from 'flux';
+import flux from 'flux';
 import assign from 'object-assign';
+
+let Dispatcher = flux.Dispatcher;
+
+import Constants from '../constants/Constants';
+var { PayloadSources } = Constants;
 
 export default assign(new Dispatcher(), {
 

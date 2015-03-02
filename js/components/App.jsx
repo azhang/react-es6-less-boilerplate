@@ -1,4 +1,5 @@
 import React from 'react'
+import ProjectSection from './ProjectSection'
 
 export default React.createClass({
 
@@ -6,6 +7,7 @@ export default React.createClass({
     return (
       <div>
         <h1>Hello World</h1>
+        <ProjectSection />
       </div>
     );
   }
