@@ -6,7 +6,6 @@ export default class ProjectListItem extends React.Component {
 
   render() {
     var project = this.props.project;
-    console.log(this.props);
     return (
       <li className={classnames({
         'project-list-item': true,

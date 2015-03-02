@@ -14,6 +14,7 @@ function getProjectListItem(project) {
     <ProjectListItem
       key={project._id}
       project={project}
+      currentProjectID={this.state.currentProjectID}
     />
   );
 }
@@ -34,7 +35,7 @@ export default class ProjectSection extends React.Component {
   }
 
   render() {
-    var projectListItems = this.state.projects.map(getProjectListItem);
+    var projectListItems = this.state.projects.map(getProjectListItem.bind(this));
     return (
       <div className="project-section">
         <ul className="project-list" ref="projectList">
