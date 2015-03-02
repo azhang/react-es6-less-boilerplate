@@ -22,6 +22,7 @@ function getProjectListItem(project) {
 export default class ProjectSection extends React.Component {
 
   constructor() {
+    super();
     this.state = getStateFromStores();
   }
 

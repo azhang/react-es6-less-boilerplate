@@ -12,7 +12,8 @@ if (process.env.NODE_ENV === 'development') {
 import ExampleData from './ExampleData';
 ExampleData.init();
 
-require('./utils/WebAPIUtils').getAllProjects();
+import { getAllProjects } from './utils/WebAPIUtils';
+getAllProjects();
 
 React.render(
   <App />,

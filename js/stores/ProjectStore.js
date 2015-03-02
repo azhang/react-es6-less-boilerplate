@@ -1,7 +1,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { ActionTypes } from '../constants/Constants';
 import events from 'events';
-import assign from 'object-assign';
 
 let { EventEmitter } = events;
 

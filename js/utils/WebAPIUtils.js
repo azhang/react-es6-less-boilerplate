@@ -1,13 +1,9 @@
 import ServerProjectActionCreators from '../actions/ServerProjectActionCreators';
 
-module.exports = {
+export function getAllProjects() {
+  // simulate retrieving data from a database
+  var rawProjects = JSON.parse(localStorage.getItem('projects'));
 
-  getAllProjects: function() {
-    // simulate retrieving data from a database
-    var rawProjects = JSON.parse(localStorage.getItem('projects'));
-
-    // simulate success callback
-    ServerProjectActionCreators.receiveAll(rawProjects);
-  }
-
-};
+  // simulate success callback
+  ServerProjectActionCreators.receiveAll(rawProjects);
+}
