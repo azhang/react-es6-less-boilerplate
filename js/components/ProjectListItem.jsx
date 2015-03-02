@@ -1,26 +1,30 @@
-var React = require('react');
+import React from 'react';
+import classnames from 'classnames';
+import ProjectActionCreators from '../actions/ProjectActionCreators';
 
-var ReactPropTypes = React.PropTypes;
+export default class ProjectListItem extends React.Component {
 
-var MessageListItem = React.createClass({
-
-  propTypes: {
-    message: ReactPropTypes.object
-  },
-
-  render: function() {
-    var message = this.props.message;
+  render() {
+    var project = this.props.project;
     return (
-      <li className="message-list-item">
-        <h5 className="message-author-name">{message._creator.displayName}</h5>
-        <div className="message-time">
-          {message._id}
-        </div>
-        <div className="message-text">{message.title}</div>
+      <li className={classnames({
+        'project-list-item': true,
+        'active': project._id === this.props.currentProjectID
+      })} 
+      onClick={this._onClick.bind(this)} >
+        <h5 className="project-title">{project.title}</h5>
+        <span className="project-creator-displayname">{project._creator.displayName}</span>
+        <div className="project-s_description">{project.s_description}</div>
       </li>
     );
   }
 
-});
+  _onClick() {
+    ProjectActionCreators.clickProject(this.props.project._id);
+  }
 
-module.exports = MessageListItem;
+}
+
+ProjectListItem.propTypes = {
+  project: React.PropTypes.object
+};

@@ -5,12 +5,9 @@
  */
 
 import flux from 'flux';
-import assign from 'object-assign';
-
 let Dispatcher = flux.Dispatcher;
-
-import Constants from '../constants/Constants';
-var { PayloadSources } = Constants;
+import assign from 'object-assign';
+import { PayloadSources } from '../constants/Constants';
 
 export default assign(new Dispatcher(), {
 

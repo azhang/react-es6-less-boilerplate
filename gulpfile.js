@@ -34,7 +34,8 @@ gulp.task('watch', function() {
   // JS with Browserify
   watchify.args.debug = true;
   watchify.args.extensions = [".jsx"];
-  var bundler = watchify(browserify(JSENTRY, watchify.args));
+  var bundler = watchify(browserify(es6ify.runtime, watchify.args));
+  bundler.add(JSENTRY);
   bundler.transform(reactify);
   bundler.transform(es6ify.configure(/^(?!.*node_modules)+.+\.js(x?)$/));
 

@@ -1,7 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Constants from '../constants/constants';
-
-let ActionTypes = Constants.ActionTypes;
+import { ActionTypes } from '../constants/Constants';
 
 export default {
 

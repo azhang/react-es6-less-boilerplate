@@ -1,11 +1,10 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Constants from '../constants/constants';
+import { ActionTypes } from '../constants/Constants';
 import events from 'events';
 import assign from 'object-assign';
 
 let { EventEmitter } = events;
 
-let ActionTypes = Constants.ActionTypes;
 let CHANGE_EVENT = 'change';
 
 var _projects = {};
@@ -62,10 +61,9 @@ ProjectStore.dispatchToken = AppDispatcher.register( (payload) => {
 
   switch(action.type) {
 
-    case ActionTypes.CLICK_THREAD:
-      AppDispatcher.waitFor([ThreadStore.dispatchToken]);
-      _markAllInThreadRead(ThreadStore.getCurrentID());
-      ProjectStore.emitChange();
+    case ActionTypes.CLICK_PROJECT:
+      console.log(action);
+      //ProjectStore.emitChange();
       break;
 
     case ActionTypes.CREATE_MESSAGE:

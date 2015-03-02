@@ -1,76 +1,62 @@
-/**
- * This file is provided by Facebook for testing and evaluation purposes
- * only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
- * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-import MessageListItem from './ProjectListItem';
-import MessageStore from '../stores/ProjectStore';
 import React from 'react';
+import ProjectListItem from './ProjectListItem';
+import ProjectStore from '../stores/ProjectStore';
 
 function getStateFromStores() {
   return {
-    messages: MessageStore.getAllForPage()
+    projects: ProjectStore.getAllForPage()
   };
 }
 
-function getMessageListItem(message) {
+function getProjectListItem(project) {
   return (
-    <MessageListItem
-      key={message.id}
-      message={message}
+    <ProjectListItem
+      key={project._id}
+      project={project}
     />
   );
 }
 
-var MessageSection = React.createClass({
+export default class ProjectSection extends React.Component {
 
-  getInitialState: function() {
-    return getStateFromStores();
-  },
+  constructor() {
+    this.state = getStateFromStores();
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     this._scrollToBottom();
-    MessageStore.addChangeListener(this._onChange);
-  },
+    ProjectStore.addChangeListener(this._onChange);
+  }
 
-  componentWillUnmount: function() {
-    MessageStore.removeChangeListener(this._onChange);
-  },
+  componentWillUnmount() {
+    ProjectStore.removeChangeListener(this._onChange);
+  }
 
-  render: function() {
-    var messageListItems = this.state.messages.map(getMessageListItem);
+  render() {
+    var projectListItems = this.state.projects.map(getProjectListItem);
     return (
-      <div className="message-section">
-        <ul className="message-list" ref="messageList">
-          {messageListItems}
+      <div className="project-section">
+        <ul className="project-list" ref="projectList">
+          {projectListItems}
         </ul>
       </div>
     );
-  },
+  }
 
-  componentDidUpdate: function() {
+  componentDidUpdate() {
     this._scrollToBottom();
-  },
+  }
 
-  _scrollToBottom: function() {
-    var ul = this.refs.messageList.getDOMNode();
+  _scrollToBottom() {
+    var ul = this.refs.projectList.getDOMNode();
     ul.scrollTop = ul.scrollHeight;
-  },
+  }
 
   /**
-   * Event handler for 'change' events coming from the MessageStore
+   * Event handler for 'change' events coming from the ProjectStore
    */
-  _onChange: function() {
+  _onChange() {
     this.setState(getStateFromStores());
   }
 
-});
-
-module.exports = MessageSection;
+}
