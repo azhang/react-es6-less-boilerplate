@@ -4,7 +4,8 @@ import ProjectStore from '../stores/ProjectStore';
 
 function getStateFromStores() {
   return {
-    projects: ProjectStore.getAllForPage()
+    projects: ProjectStore.getAllForPage(),
+    currentProjectID: ProjectStore.getCurrentID()
   };
 }
 
@@ -25,7 +26,7 @@ export default class ProjectSection extends React.Component {
 
   componentDidMount() {
     this._scrollToBottom();
-    ProjectStore.addChangeListener(this._onChange);
+    ProjectStore.addChangeListener(this._onChange.bind(this));
   }
 
   componentWillUnmount() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import ProjectSection from './ProjectSection'
 
-export default React.createClass({
+export default class App extends React.Component {
 
   render() {
     return (
@@ -12,4 +12,4 @@ export default React.createClass({
     );
   }
 
-});
+}
