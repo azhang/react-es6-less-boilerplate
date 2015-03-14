@@ -2,11 +2,11 @@
 
 import React from 'react';
 
-import App from './components/App';
+import App from './components/App.jsx!';
 
-if (process.env.NODE_ENV === 'development') {
-  window.React = React; // export for http://fb.me/react-devtools
-}
+// if (process.env.NODE_ENV === 'development') {
+//   window.React = React; // export for http://fb.me/react-devtools
+// }
 
 // load all example data;
 import ExampleData from './ExampleData';

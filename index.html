@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="build/app.css" type="text/css"/>
   </head>
   <body>
-    <script src="build/app.js"></script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.import('js/app.jsx!');
+    </script>
   </body>
 </html>
