@@ -15,8 +15,12 @@ System.config({
     "flux": "npm:flux@2.0.1",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
     "keymirror": "npm:keymirror@0.1.1",
+    "less": "github:aaike/jspm-less-plugin@0.0.5",
     "object-assign": "npm:object-assign@2.0.0",
     "react": "npm:react@0.13.0",
+    "github:aaike/jspm-less-plugin@0.0.5": {
+      "less.js": "github:distros/less@2.4.0"
+    },
     "github:floatdrop/plugin-jsx@1.1.0": {
       "react-tools": "npm:react-tools@0.13.0"
     },
