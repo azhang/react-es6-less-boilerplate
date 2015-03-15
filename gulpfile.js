@@ -15,7 +15,7 @@ var STYLES = ['src/css/app.less'];
 gulp.task('browser-sync', function() {
   browserSync.init([
     './src/css/**/*',
-    './src/js/**/*.js',
+    './src/js/**/*',
     './**/*.html'
   ],
   {
