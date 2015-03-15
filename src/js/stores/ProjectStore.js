@@ -27,7 +27,6 @@ class ProjectStore extends EventEmitter {
       switch(action.type) {
 
         case ActionTypes.CLICK_PROJECT:
-          console.log(action);
           _currentID = action.projectID;
           this.emitChange();
           break;
@@ -97,4 +96,4 @@ class ProjectStore extends EventEmitter {
   }
 }
 
-export default new ProjectStore;
+export default new ProjectStore();

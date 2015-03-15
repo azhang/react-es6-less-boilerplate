@@ -10,7 +10,7 @@ export default class ProjectListItem extends React.Component {
       <li className={classnames({
         'project-list-item': true,
         'active': project._id === this.props.currentProjectID
-      })} 
+      })}
       onClick={this._onClick.bind(this)} >
         <h5 className="project-title">{project.title}</h5>
         <span className="project-creator-displayname">{project._creator.displayName}</span>
