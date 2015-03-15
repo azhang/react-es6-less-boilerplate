@@ -1,4 +1,4 @@
-# Thinkerous client-side, with Flux.
+# JSPM React Less Boilerplate
 
 ## Features
 
