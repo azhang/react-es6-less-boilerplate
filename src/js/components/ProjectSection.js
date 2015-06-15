@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectListItem from './ProjectListItem.jsx!';
+import ProjectListItem from './ProjectListItem';
 import ProjectStore from '../stores/ProjectStore';
 
 function getStateFromStores() {

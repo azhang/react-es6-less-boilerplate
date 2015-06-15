@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectSection from './ProjectSection.jsx!'
+import ProjectSection from './ProjectSection'
 
 export default class App extends React.Component {
 

@@ -51,7 +51,7 @@ gulp.task('delete-dist', function(cb) {
 
 // Bundle js with jspm
 gulp.task('bundle', plugins.shell.task([
-  'jspm bundle-sfx ./src/js/app.jsx! ./dist/js/app.js'
+  'jspm bundle-sfx ./src/js/app.js ./dist/js/app.js'
 ]));
 
 // Build Less -> minified css

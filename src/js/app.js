@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import App from './components/App.jsx!';
+import App from './components/App.js';
 
 // if (process.env.NODE_ENV === 'development') {
 //   window.React = React; // export for http://fb.me/react-devtools
