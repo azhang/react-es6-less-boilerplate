@@ -51,7 +51,7 @@ export default class ProjectSection extends React.Component {
   }
 
   _scrollToBottom() {
-    var ul = this.refs.projectList.getDOMNode();
+    var ul = React.findDOMNode(this.refs.projectList);
     ul.scrollTop = ul.scrollHeight;
   }
 

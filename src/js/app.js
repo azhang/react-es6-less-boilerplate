@@ -17,5 +17,5 @@ getAllProjects();
 
 React.render(
   <App />,
-  document.body
+  document.getElementById('content')
 );
